@@ -1,0 +1,23 @@
+name: Update recent activity
+
+# Rewrites the block between <!--START_SECTION:activity--> and
+# <!--END_SECTION:activity--> in README.md with your last few public
+# GitHub events (pushes, PRs, issues, releases). Runs on the default
+# GITHUB_TOKEN — no extra secret needed.
+
+on:
+  schedule:
+    - cron: "0 */6 * * *"   # every 6 hours
+  workflow_dispatch: {}
+
+jobs:
+  update-readme:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+      - uses: jamesgeorge007/github-activity-readme@master
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          MAX_LINES: 5

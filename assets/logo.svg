@@ -1,0 +1,19 @@
+<svg width="56" height="56" viewBox="0 0 56 56" fill="none"
+     xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="logoTitle">
+  <title id="logoTitle">KB monogram</title>
+
+  <defs>
+    <clipPath id="logoClip"><rect x="0" y="0" width="56" height="56" rx="16"/></clipPath>
+  </defs>
+
+  <g clip-path="url(#logoClip)">
+    <rect width="56" height="56" fill="#0A0A0A"/>
+    <rect width="56" height="1" fill="rgba(255,255,255,0.08)"/>
+    <text x="28" y="35" text-anchor="middle" font-size="20" font-weight="700"
+          letter-spacing="-0.5"
+          font-family="-apple-system, 'SF Pro Display', 'Segoe UI', Inter, ui-sans-serif, system-ui, sans-serif"
+          fill="#F5F5F5">KB</text>
+    <circle cx="44" cy="14" r="2.5" fill="#3B82F6"/>
+  </g>
+  <rect x="0.5" y="0.5" width="55" height="55" rx="16" fill="none" stroke="rgba(255,255,255,0.08)"/>
+</svg>

@@ -1,0 +1,205 @@
+<svg width="100%" height="100%" viewBox="0 0 1280 640" fill="none"
+     xmlns="http://www.w3.org/2000/svg" role="img"
+     aria-labelledby="bannerLightTitle bannerLightDesc">
+
+  <title id="bannerLightTitle">Kushagra — Turning Ideas Into Software</title>
+  <desc id="bannerLightDesc">
+    Animated light-mode profile banner for Kushagra Singh Bisht, an engineering
+    student building with React, Kotlin and Python. Shows a terminal panel
+    with recent git activity, a progress indicator for current learning, and
+    an illustrated portrait in the lower right corner.
+  </desc>
+
+  <!-- ============================================================ -->
+  <!-- DESIGN TOKENS (see /DESIGN_SYSTEM.md — keep in sync manually) -->
+  <!-- black #0A0A0A · graphite #171717 · charcoal #262626           -->
+  <!-- off-white #F5F5F5 · gray #A3A3A3 · accent #2563EB             -->
+  <!-- ============================================================ -->
+
+  <style>
+    .sans  { font-family: -apple-system, "SF Pro Display", "Segoe UI", Inter, ui-sans-serif, system-ui, sans-serif; }
+    .mono  { font-family: "JetBrains Mono", "Cascadia Code", Consolas, "SF Mono", ui-monospace, Menlo, monospace; }
+
+    /* --- one-time entrance reveal --- */
+    .fade-up        { opacity: 0; animation: fadeUp 1s cubic-bezier(.16,.84,.44,1) forwards; }
+    .fade-up.d1      { animation-delay: .12s; }
+    .fade-up.d2      { animation-delay: .24s; }
+    .fade-up.d3      { animation-delay: .36s; }
+    @keyframes fadeUp { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+
+    /* --- terminal cursor + type reveal --- */
+    .cursor  { animation: blink 1s steps(1) infinite; }
+    @keyframes blink { 0%, 49% { opacity: 1; } 50%, 100% { opacity: 0; } }
+
+    .type-line { clip-path: inset(0 100% 0 0); animation: typeReveal 2.4s .9s cubic-bezier(.4,0,.2,1) forwards; }
+    @keyframes typeReveal { to { clip-path: inset(0 0 0 0); } }
+
+    /* --- ambient background motion --- */
+    .orbit    { animation: spin 42s linear infinite; transform-origin: 1006px 168px; }
+    @keyframes spin { to { transform: rotate(360deg); } }
+
+    .twinkle-a { animation: twinkleA 6.5s ease-in-out infinite; }
+    .twinkle-b { animation: twinkleB 8s ease-in-out infinite; }
+    .twinkle-c { animation: twinkleC 7.2s ease-in-out infinite; }
+    @keyframes twinkleA { 0%,100% { opacity: .07; } 50% { opacity: .2; } }
+    @keyframes twinkleB { 0%,100% { opacity: .05; } 50% { opacity: .16; } }
+    @keyframes twinkleC { 0%,100% { opacity: .09; } 50% { opacity: .22; } }
+
+    .glow-pulse { animation: glowPulse 10s ease-in-out infinite; }
+    @keyframes glowPulse { 0%,100% { opacity: .05; } 50% { opacity: .1; } }
+
+    /* --- progress indicator --- */
+    .progress-fill { animation: slide 7s ease-in-out infinite; }
+    @keyframes slide { 0%,100% { transform: translateX(0); } 50% { transform: translateX(1012px); } }
+
+    /* --- avatar: float + breathe, kept extremely subtle --- */
+    .avatar-float   { animation: floaty 7.5s ease-in-out infinite; }
+    .avatar-breathe { animation: breathe 9.5s ease-in-out infinite; }
+    @keyframes floaty  { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-3px); } }
+    @keyframes breathe { 0%,100% { transform: scale(1); } 50% { transform: scale(1.006); } }
+
+    @media (prefers-reduced-motion: reduce) {
+      .fade-up, .cursor, .type-line, .orbit, .twinkle-a, .twinkle-b, .twinkle-c,
+      .glow-pulse, .progress-fill, .avatar-float, .avatar-breathe {
+        animation: none !important;
+        opacity: 1 !important;
+        transform: none !important;
+        clip-path: inset(0 0 0 0) !important;
+      }
+    }
+  </style>
+
+  <defs>
+    <clipPath id="frameClip"><rect x="0" y="0" width="1280" height="640" rx="22"/></clipPath>
+    <clipPath id="termClip"><rect x="64" y="298" width="612" height="240" rx="16"/></clipPath>
+
+    <radialGradient id="cornerGlow" cx="0" cy="0" r="1">
+      <stop offset="0%" stop-color="#2563EB" stop-opacity=".18"/>
+      <stop offset="100%" stop-color="#2563EB" stop-opacity="0"/>
+    </radialGradient>
+
+    <radialGradient id="avatarGround" cx="50%" cy="35%" r="65%">
+      <stop offset="0%" stop-color="#2563EB" stop-opacity=".06"/>
+      <stop offset="100%" stop-color="#2563EB" stop-opacity="0"/>
+    </radialGradient>
+
+    <!-- fades the illustration's own edges into the matte background -->
+    <radialGradient id="avatarFade" cx="62%" cy="28%" r="72%">
+      <stop offset="0%"  stop-color="#fff" stop-opacity="1"/>
+      <stop offset="68%" stop-color="#fff" stop-opacity="1"/>
+      <stop offset="100%" stop-color="#fff" stop-opacity="0"/>
+    </radialGradient>
+    <mask id="avatarMask">
+      <rect x="900" y="270" width="380" height="570" fill="url(#avatarFade)"/>
+    </mask>
+
+    <filter id="softShadow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="14"/>
+    </filter>
+  </defs>
+
+  <g clip-path="url(#frameClip)">
+
+    <!-- ===================== BACKGROUND ===================== -->
+    <rect x="0" y="0" width="1280" height="640" fill="#F5F5F5"/>
+    <circle class="glow-pulse" cx="40" cy="10" r="420" fill="url(#cornerGlow)"/>
+
+    <!-- ambient particles — sparse, purposeful, kept clear of text & avatar -->
+    <circle class="twinkle-a" cx="760" cy="120" r="2" fill="#8A8A8A"/>
+    <circle class="twinkle-b" cx="840" cy="230" r="1.6" fill="#8A8A8A"/>
+    <circle class="twinkle-c" cx="1120" cy="110" r="2" fill="#2563EB"/>
+    <circle class="twinkle-a" cx="1160" cy="245" r="1.4" fill="#8A8A8A"/>
+    <circle class="twinkle-b" cx="900" cy="150" r="1.6" fill="#8A8A8A"/>
+    <circle class="twinkle-c" cx="700" cy="210" r="1.4" fill="#8A8A8A"/>
+
+    <!-- slow orbiting dot pair — upper-right dead space -->
+    <g class="orbit">
+      <circle cx="1006" cy="128" r="3" fill="#2563EB" fill-opacity=".5"/>
+      <circle cx="1006" cy="208" r="2" fill="#8A8A8A" fill-opacity=".4"/>
+    </g>
+
+    <!-- ===================== HERO COPY ===================== -->
+
+    <!-- eyebrow pills -->
+    <g class="fade-up sans">
+      <rect x="64" y="64" width="152" height="32" rx="16" fill="#FFFFFF" stroke="rgba(10,10,10,0.08)"/>
+      <text x="88" y="84" font-size="11" font-weight="600" letter-spacing="1" fill="#525252">UJJAIN, INDIA</text>
+
+      <rect x="228" y="64" width="216" height="32" rx="16" fill="#FFFFFF" stroke="rgba(10,10,10,0.08)"/>
+      <circle cx="250" cy="80" r="3" fill="#2563EB"/>
+      <text x="262" y="84" font-size="11" font-weight="600" letter-spacing="1" fill="#525252">ENGINEERING STUDENT</text>
+    </g>
+
+    <!-- name -->
+    <text class="fade-up d1 sans" x="62" y="184" font-size="64" font-weight="700" letter-spacing="-1.2" fill="#0A0A0A">Kushagra</text>
+
+    <!-- tagline -->
+    <text class="fade-up d2 sans" x="64" y="222" font-size="18" font-weight="400" fill="#525252">Turning Ideas Into Software.</text>
+
+    <!-- tech pills -->
+    <g class="fade-up d3 sans">
+      <rect x="64"  y="246" width="72"  height="28" rx="14" fill="#FFFFFF" stroke="rgba(10,10,10,0.08)"/>
+      <text x="82"  y="264" font-size="11" font-weight="600" fill="#0A0A0A">React</text>
+
+      <rect x="148" y="246" width="82"  height="28" rx="14" fill="#FFFFFF" stroke="rgba(10,10,10,0.08)"/>
+      <text x="166" y="264" font-size="11" font-weight="600" fill="#0A0A0A">Python</text>
+
+      <rect x="242" y="246" width="82"  height="28" rx="14" fill="#FFFFFF" stroke="rgba(10,10,10,0.08)"/>
+      <text x="260" y="264" font-size="11" font-weight="600" fill="#0A0A0A">Kotlin</text>
+
+      <rect x="336" y="246" width="104" height="28" rx="14" fill="#FFFFFF" stroke="rgba(10,10,10,0.08)"/>
+      <text x="354" y="264" font-size="11" font-weight="600" fill="#0A0A0A">TypeScript</text>
+    </g>
+
+    <!-- ===================== TERMINAL ===================== -->
+    <g class="fade-up d3">
+      <g clip-path="url(#termClip)">
+        <rect x="64" y="298" width="612" height="240" fill="#171717"/>
+        <rect x="64" y="298" width="612" height="34" fill="#1F1F1F"/>
+
+        <!-- title bar controls — monochrome, no traffic-light cliche -->
+        <circle cx="86"  cy="315" r="4" fill="#3A3A3A"/>
+        <circle cx="102" cy="315" r="4" fill="#3A3A3A"/>
+        <circle cx="118" cy="315" r="4" fill="#4A4A4A"/>
+        <text x="676" y="319" text-anchor="end" font-size="10.5" letter-spacing=".6" fill="#6B6B6B" class="mono">zsh — kushagra@dev</text>
+
+        <!-- terminal content -->
+        <g class="mono" font-size="13.5">
+          <text x="84" y="356"><tspan fill="#6B6B6B">kushagra@dev ~ % </tspan><tspan fill="#F5F5F5">whoami</tspan></text>
+          <text x="84" y="376" fill="#2563EB">kushagra</text>
+
+          <text x="84" y="416"><tspan fill="#6B6B6B">kushagra@dev ~ % </tspan><tspan fill="#F5F5F5">git log --oneline -3</tspan></text>
+          <text x="84" y="436"><tspan fill="#2563EB">a3f9c21 </tspan><tspan fill="#A3A3A3">feat: ship Art-Of-Coffee landing page</tspan></text>
+          <text x="84" y="456"><tspan fill="#2563EB">9be2d40 </tspan><tspan fill="#A3A3A3">refactor: clean architecture in ReconX</tspan></text>
+          <text x="84" y="476"><tspan fill="#2563EB">1c77a83 </tspan><tspan fill="#A3A3A3">docs: update Developer_HandBook</tspan></text>
+
+          <text x="84" y="516" fill="#6B6B6B">kushagra@dev ~ % </text>
+          <text class="type-line" x="216" y="516" fill="#F5F5F5">shipping, one commit at a time</text>
+          <rect class="cursor" x="628" y="504" width="8" height="15" fill="#2563EB"/>
+        </g>
+      </g>
+      <rect x="64" y="298" width="612" height="240" rx="16" fill="none" stroke="rgba(255,255,255,0.08)"/>
+    </g>
+
+    <!-- ===================== PROGRESS / CURRENT FOCUS ===================== -->
+    <g class="fade-up d3 sans">
+      <text x="64" y="558" font-size="12" fill="#525252">Currently exploring — DSA · System Design · AI Engineering</text>
+      <rect x="64" y="568" width="1152" height="4" rx="2" fill="rgba(10,10,10,0.08)"/>
+      <rect class="progress-fill" x="64" y="568" width="140" height="4" rx="2" fill="#2563EB" fill-opacity=".55"/>
+    </g>
+
+    <!-- ===================== AVATAR ===================== -->
+    <g class="avatar-float">
+      <ellipse class="glow-pulse" cx="1060" cy="600" rx="150" ry="28" fill="url(#avatarGround)"/>
+      <g class="avatar-breathe" transform="rotate(-3 1090 460)">
+        <g mask="url(#avatarMask)">
+          <image href="avatar.png" x="900" y="270" width="380" height="570" preserveAspectRatio="xMidYMid slice"/>
+        </g>
+      </g>
+    </g>
+
+  </g>
+
+  <!-- outer frame hairline -->
+  <rect x="0.5" y="0.5" width="1279" height="639" rx="22" fill="none" stroke="rgba(10,10,10,0.06)"/>
+</svg>

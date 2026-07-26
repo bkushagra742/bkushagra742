@@ -1,0 +1,95 @@
+<svg width="100%" height="100%" viewBox="0 0 1152 552" fill="none"
+     xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="projTitleD projDescD">
+
+  <title id="projTitleD">Featured projects</title>
+  <desc id="projDescD">Four project cards: ReconX, Art of Coffee, Developer HandBook, and Kushagra Website V2, each with status, description, tech stack and repository link.</desc>
+
+  <style>
+    .sans { font-family: -apple-system, "SF Pro Display", "Segoe UI", Inter, ui-sans-serif, system-ui, sans-serif; }
+    .mono { font-family: "JetBrains Mono", "Cascadia Code", Consolas, "SF Mono", ui-monospace, Menlo, monospace; }
+  </style>
+
+  <defs>
+    <!-- reusable card frame: duplicate the <use> below + one text group per new project -->
+    <g id="cardFrame">
+      <rect width="564" height="252" rx="16" fill="#171717" stroke="rgba(255,255,255,0.08)"/>
+      <rect width="564" height="1" rx="0.5" fill="rgba(255,255,255,0.06)"/>
+    </g>
+    <!-- shared minimal accent motif: a corner bracket, echoed from the banner's terminal corner -->
+    <g id="cornerAccent">
+      <path d="M0 10 V2 Q0 0 2 0 H10" stroke="#3B82F6" stroke-width="2" fill="none" stroke-linecap="round" stroke-opacity=".7"/>
+    </g>
+  </defs>
+
+  <!-- ============ Card 1 — ReconX_Kushagra ============ -->
+  <g transform="translate(0,0)">
+    <use href="#cardFrame"/>
+    <g transform="translate(24,24)"><use href="#cornerAccent"/></g>
+    <g class="sans" transform="translate(24,44)">
+      <text font-size="18" font-weight="600" fill="#F5F5F5">ReconX_Kushagra</text>
+      <rect x="192" y="-15" width="66" height="22" rx="11" fill="rgba(59,130,246,0.12)"/>
+      <text x="225" y="0" text-anchor="middle" font-size="10" font-weight="600" fill="#3B82F6">ACTIVE</text>
+    </g>
+    <text class="sans" x="24" y="82" font-size="13" fill="#A3A3A3">
+      <tspan x="24" dy="0">A modern Android application exploring clean</tspan>
+      <tspan x="24" dy="18">architecture, Jetpack Compose, and intuitive UX.</tspan>
+    </text>
+    <text class="mono" x="24" y="150" font-size="11.5" fill="#6B6B6B">Kotlin · Jetpack Compose · Android · Material Design</text>
+    <line x1="24" y1="176" x2="540" y2="176" stroke="rgba(255,255,255,0.06)"/>
+    <text class="mono" x="24" y="202" font-size="12" fill="#3B82F6">github.com/bkushagra742/ReconX_Kushagra</text>
+  </g>
+
+  <!-- ============ Card 2 — Art-Of-Coffee ============ -->
+  <g transform="translate(588,0)">
+    <use href="#cardFrame"/>
+    <g transform="translate(24,24)"><use href="#cornerAccent"/></g>
+    <g class="sans" transform="translate(24,44)">
+      <text font-size="18" font-weight="600" fill="#F5F5F5">Art-Of-Coffee</text>
+      <rect x="146" y="-15" width="94" height="22" rx="11" fill="rgba(163,163,163,0.12)"/>
+      <text x="193" y="0" text-anchor="middle" font-size="10" font-weight="600" fill="#A3A3A3">COMPLETED</text>
+    </g>
+    <text class="sans" x="24" y="82" font-size="13" fill="#A3A3A3">
+      <tspan x="24" dy="0">A premium cafe landing page with elegant</tspan>
+      <tspan x="24" dy="18">typography and motion inspired by product sites.</tspan>
+    </text>
+    <text class="mono" x="24" y="150" font-size="11.5" fill="#6B6B6B">React · Vite · Tailwind CSS · Framer Motion</text>
+    <line x1="24" y1="176" x2="540" y2="176" stroke="rgba(255,255,255,0.06)"/>
+    <text class="mono" x="24" y="202" font-size="12" fill="#3B82F6">github.com/bkushagra742/Art-Of-Coffee</text>
+  </g>
+
+  <!-- ============ Card 3 — Developer_HandBook ============ -->
+  <g transform="translate(0,300)">
+    <use href="#cardFrame"/>
+    <g transform="translate(24,24)"><use href="#cornerAccent"/></g>
+    <g class="sans" transform="translate(24,44)">
+      <text font-size="18" font-weight="600" fill="#F5F5F5">Developer_HandBook</text>
+      <rect x="222" y="-15" width="94" height="22" rx="11" fill="rgba(163,163,163,0.12)"/>
+      <text x="269" y="0" text-anchor="middle" font-size="10" font-weight="600" fill="#A3A3A3">COMPLETED</text>
+    </g>
+    <text class="sans" x="24" y="82" font-size="13" fill="#A3A3A3">
+      <tspan x="24" dy="0">An open-source knowledge base for structured</tspan>
+      <tspan x="24" dy="18">learning across modern web technologies.</tspan>
+    </text>
+    <text class="mono" x="24" y="150" font-size="11.5" fill="#6B6B6B">Markdown · GitHub · Documentation</text>
+    <line x1="24" y1="176" x2="540" y2="176" stroke="rgba(255,255,255,0.06)"/>
+    <text class="mono" x="24" y="202" font-size="12" fill="#3B82F6">github.com/bkushagra742/Developer_HandBook</text>
+  </g>
+
+  <!-- ============ Card 4 — Kushagra-Website-V2 ============ -->
+  <g transform="translate(588,300)">
+    <use href="#cardFrame"/>
+    <g transform="translate(24,24)"><use href="#cornerAccent"/></g>
+    <g class="sans" transform="translate(24,44)">
+      <text font-size="17" font-weight="600" fill="#F5F5F5">Kushagra-Website-V2</text>
+      <rect x="256" y="-15" width="66" height="22" rx="11" fill="rgba(59,130,246,0.12)"/>
+      <text x="289" y="0" text-anchor="middle" font-size="10" font-weight="600" fill="#3B82F6">ACTIVE</text>
+    </g>
+    <text class="sans" x="24" y="82" font-size="13" fill="#A3A3A3">
+      <tspan x="24" dy="0">Personal developer portfolio with a premium UI</tspan>
+      <tspan x="24" dy="18">inspired by Apple, Vercel, and Linear.</tspan>
+    </text>
+    <text class="mono" x="24" y="150" font-size="11.5" fill="#6B6B6B">React · Vite · Tailwind CSS · Framer Motion</text>
+    <line x1="24" y1="176" x2="540" y2="176" stroke="rgba(255,255,255,0.06)"/>
+    <text class="mono" x="24" y="202" font-size="12" fill="#3B82F6">github.com/bkushagra742/Kushagra-Website-V2</text>
+  </g>
+</svg>
