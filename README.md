@@ -116,11 +116,7 @@ small consistent pushes over big rewrites.
   (github-readme-stats, streak-stats, profile-trophy) that go down or
   get rate-limited on their own, with one pipeline we control.
 -->
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/bkushagra742/bkushagra742/output/metrics-dark.svg">
-  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/bkushagra742/bkushagra742/output/metrics-light.svg">
-  <img src="https://raw.githubusercontent.com/bkushagra742/bkushagra742/output/metrics-dark.svg" alt="GitHub metrics — stats, top languages, and achievements" width="100%"/>
-</picture>
+<img src="https://raw.githubusercontent.com/bkushagra742/bkushagra742/output/metrics.svg" alt="GitHub metrics — stats, top languages, and achievements" width="100%"/>
 
 </div>
 
