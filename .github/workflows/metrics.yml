@@ -3,9 +3,9 @@ name: Generate GitHub metrics
 # Replaces the old github-readme-stats / streak-stats / profile-trophy
 # widgets (all free, shared, third-party endpoints that regularly go
 # down or get rate-limited). This workflow renders the same kind of
-# information — stats, top languages, and earned achievements — as
-# static SVGs *we own*, using lowlighter/metrics, and commits them to
-# the `output` branch next to the contribution snake.
+# information — stats, top languages, and earned achievements — as a
+# static SVG *we own*, using lowlighter/metrics, and commits it to the
+# `output` branch next to the contribution snake.
 #
 # Requires a repo secret named METRICS_TOKEN — see SETUP.md, step 3.
 
@@ -17,14 +17,14 @@ on:
   workflow_dispatch: {}
 
 jobs:
-  metrics-dark:
+  metrics:
     runs-on: ubuntu-latest
     permissions:
       contents: write
     steps:
       - uses: lowlighter/metrics@latest
         with:
-          filename: metrics-dark.svg
+          filename: metrics.svg
           token: ${{ secrets.METRICS_TOKEN }}
           user: bkushagra742
           template: classic
@@ -35,26 +35,4 @@ jobs:
           plugin_achievements: yes
           plugin_achievements_display: compact
           config_timezone: Asia/Kolkata
-          config_theme: dark
-          committer_branch: output
-
-  metrics-light:
-    runs-on: ubuntu-latest
-    permissions:
-      contents: write
-    steps:
-      - uses: lowlighter/metrics@latest
-        with:
-          filename: metrics-light.svg
-          token: ${{ secrets.METRICS_TOKEN }}
-          user: bkushagra742
-          template: classic
-          base: header, activity, community, repositories, metadata
-          plugin_languages: yes
-          plugin_languages_limit: 8
-          plugin_languages_threshold: 0%
-          plugin_achievements: yes
-          plugin_achievements_display: compact
-          config_timezone: Asia/Kolkata
-          config_theme: classic
           committer_branch: output
