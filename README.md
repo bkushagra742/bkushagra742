@@ -25,9 +25,6 @@
 
 <br/>
 
-<div align="center">
-<img src="assets/avatar-circle.png" width="72" height="72" alt="Kushagra" />
-
 <br/><br/>
 
 **Kushagra Singh Bisht** · Ujjain, India
