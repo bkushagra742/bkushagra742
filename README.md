@@ -163,7 +163,7 @@ Right now that means spending time in **DSA**, **Android development**,
 
 ### let's talk
 
-[Portfolio](https://bkushagra742.qzz.io) · [LinkedIn](https://www.linkedin.com/in/bkushagra742) · [Instagram](https://www.instagram.com/bkushagra742) · [Email](mailto:bmamta742@gmail.com)
+[Portfolio](https://bkushagra742.qzz.io) · [LinkedIn](https://www.linkedin.com/in/bkushagra742) · [Instagram](https://www.instagram.com/isotnt) · [Email](mailto:bmamta742@gmail.com)
 
 <sub><a href="DESIGN_SYSTEM.md">see how this profile is built →</a></sub>
 
